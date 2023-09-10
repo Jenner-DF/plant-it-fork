@@ -1,6 +1,6 @@
 import icons from 'url:../../img/icons.svg';
-import { Fraction } from 'fractional';
 import View from './View';
+import fracty from 'fracty';
 class recipeView extends View {
   _parentElement = document.querySelector('.recipe');
   _errorMsg = `could not find recipe. please try another.`;
@@ -124,7 +124,7 @@ class recipeView extends View {
    </svg>
    <div class="recipe__quantity">${
      ingredient.quantity
-       ? new Fraction(ingredient.quantity).toString()
+       ? new fracty(ingredient.quantity).toString()
        : 'as desired'
    }</div>
    <div class="recipe__description">
