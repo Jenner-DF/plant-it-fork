@@ -20,6 +20,3 @@ class BookmarksView extends View {
 }
 
 export default new BookmarksView();
-console.log(`hello world`);
-console.log(`hello world`);
-console.log(`hello world`);
