@@ -19,9 +19,5 @@ class BookmarksView extends View {
   }
 }
 
-
-
+export default new BookmarksView();
 console.log(`hello world`);
-export default new BookmarksView();
-export default new BookmarksView();
-export default new BookmarksView();
