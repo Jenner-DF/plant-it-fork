@@ -18,4 +18,10 @@ class BookmarksView extends View {
     window.addEventListener('load', handler);
   }
 }
+
+
+
+console.log(`hello world`);
+export default new BookmarksView();
+export default new BookmarksView();
 export default new BookmarksView();
