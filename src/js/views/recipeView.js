@@ -40,25 +40,25 @@ class recipeView extends View {
         <div class="recipe__details">
           <div class="recipe__info">
           <svg class="recipe__info-icon">
-          <use href="${icons}.svg#icon-cycle"></use>
+          <use href="${icons}#icon-cycle"></use>
           </svg>
           <span class="recipe__info-text">${this._data.cycle}</span>
           </div>
           <div class="recipe__info">
           <svg class="recipe__info-icon">
-          <use href="${icons}.svg#icon-water"></use>
+          <use href="${icons}#icon-water"></use>
           </svg>
           <span class="recipe__info-text">${this._data.watering}</span>
           </div>
           <div class="recipe__info">
           <svg class="recipe__info-icon">
-          <use href="${icons}.svg#icon-sun"></use>
+          <use href="${icons}#icon-sun"></use>
           </svg>
           <span class="recipe__info-text">${this._data.sunlight}</span>
           </div>
           <div class="recipe__info">
           <svg class="recipe__info-icon">
-          <use href="${icons}.svg#icon-clock"></use>
+          <use href="${icons}#icon-clock"></use>
           </svg>
           <span class="recipe__info-text">${this._data.careLevel}</span>
           </div>
@@ -68,7 +68,7 @@ class recipeView extends View {
           </div>
           <button class="btn--round btn--bookmark">
             <svg class="">
-              <use href="${icons}.svg#icon-bookmark${
+              <use href="${icons}#icon-bookmark${
       this._data.bookmarked ? '-fill' : ''
     }"></use>
             </svg>
