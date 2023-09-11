@@ -65,6 +65,9 @@ class recipeView extends View {
         </div>
 
         <div class="recipe__ingredients">
+          <svg class="recipe__info-icon">
+            <use href="${icons}.svg#icon-care"></use>
+          </svg>
           <h2 class="heading--2">Plant Care Guide</h2>
           <span> Watering:
           Watermelons need a lot of water, especially during the hot summer months. To successfully grow watermelon, water the plant when the top 1-2 inches of the soil is dry. Water deeply and slowly, soaking the soil evenly so that the water reaches the roots. If water runs off of the soil, wait 20 minutes and then water again. Allow the soil to dry slightly between waterings. Water the plants 2 to 3 times a week with 2-3 gallons of water per plant. Avoid wetting the foliage while watering. During a prolonged dry period, or if temperatures exceed 90°F, increase watering to once per day. <br> <br>
