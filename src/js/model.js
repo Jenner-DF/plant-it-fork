@@ -25,7 +25,7 @@ export const loadRecipe = async function (id) {
     );
     const plant = data;
     const [careGuide] = data_careGuide.data;
-    console.log('😂😂😂😂😂asd😂', careGuide.section);
+    console.log('😂😂😂😂😂asd😂', plant);
     state.recipe = {
       id: plant.id,
       commonName: plant.common_name,
@@ -46,7 +46,7 @@ export const loadRecipe = async function (id) {
       pruning: careGuide.section[2].description,
     };
     console.log('😁😁😁😁😁', state.recipe);
-    if (state.bookmarks.some(bmarked => bmarked.id === id))
+    if (state.bookmarks.some(bmarked => bmarked.id === +id))
       state.recipe.bookmarked = true;
     else state.recipe.bookmarked = false;
     console.log(state.bookmarks);
@@ -119,8 +119,6 @@ const init = function () {
 };
 
 const clearBookmarks = function () {
-  // state.bookmarks = [];
   localStorage.clear('bookmarks');
 };
-// clearBookmarks();
 init();

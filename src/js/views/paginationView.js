@@ -1,11 +1,8 @@
 import View from './View';
 import icons from 'url:../../img/icons.svg';
-import { state } from '../model';
 
 class PaginationView extends View {
   _parentElement = document.querySelector('.pagination');
-  // _prevButton = document.querySelector('.pagination__btn--prev');
-  // _nextButton = document.querySelector('.pagination__btn--next');
 
   _generateMarkup() {
     const currentPage = this._data.page;

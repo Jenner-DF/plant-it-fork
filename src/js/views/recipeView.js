@@ -4,20 +4,20 @@ import fracty from 'fracty';
 
 class recipeView extends View {
   _parentElement = document.querySelector('.recipe');
-  _errorMsg = `could not find recipe. please try another.`;
+  _errorMsg = `Cannot find plant data 😢. Try another plant`;
   _Msg = ``;
 
   addHandlerRender(handler) {
     ['hashchange', 'load'].forEach(ev => window.addEventListener(ev, handler));
   }
-  addHandlerUpdateServings(handler) {
-    this._parentElement.addEventListener('click', function (e) {
-      const btn = e.target.closest('.btn--update-servings');
-      if (!btn) return;
-      const updateTo = +btn.dataset.updateTo; //convert to int
-      if (updateTo > 0) handler(updateTo);
-    });
-  }
+  // addHandlerUpdateServings(handler) {
+  //   this._parentElement.addEventListener('click', function (e) {
+  //     const btn = e.target.closest('.btn--update-servings');
+  //     if (!btn) return;
+  //     const updateTo = +btn.dataset.updateTo; //convert to int
+  //     if (updateTo > 0) handler(updateTo);
+  //   });
+  // }
   addHandlerAddBookmarks(handler) {
     this._parentElement.addEventListener('click', function (e) {
       const btn = e.target.closest('.btn--bookmark');
@@ -94,20 +94,20 @@ class recipeView extends View {
     `;
   }
 
-  _generateMarkupIngredients(ingredient) {
-    return ` <li class="recipe__ingredient">
-   <svg class="recipe__icon">
-     <use href="${icons}.svg#icon-check"></use>
-   </svg>
-   <div class="recipe__quantity">${
-     ingredient.quantity ? fracty(ingredient.quantity).toString() : 'as desired'
-   }</div>
-   <div class="recipe__description">
-     <span class="recipe__unit">${ingredient.unit}</span>
-     ${ingredient.description}
-   </div>
- </li>`;
-  }
+  //   _generateMarkupIngredients(ingredient) {
+  //     return ` <li class="recipe__ingredient">
+  //    <svg class="recipe__icon">
+  //      <use href="${icons}.svg#icon-check"></use>
+  //    </svg>
+  //    <div class="recipe__quantity">${
+  //      ingredient.quantity ? fracty(ingredient.quantity).toString() : 'as desired'
+  //    }</div>
+  //    <div class="recipe__description">
+  //      <span class="recipe__unit">${ingredient.unit}</span>
+  //      ${ingredient.description}
+  //    </div>
+  //  </li>`;
+  //   }
 }
 
 export default new recipeView();
