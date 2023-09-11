@@ -8,7 +8,6 @@ import {
 import { getJSON, removePremiumPlants } from './helpers.js';
 export const state = {
   recipe: {},
-  careGuide: {},
   search: {
     query: '',
     results: [],
@@ -26,7 +25,7 @@ export const loadRecipe = async function (id) {
     );
     const plant = data;
     const [careGuide] = data_careGuide.data;
-    console.log('😂😂😂😂😂😂', careGuide.section);
+    console.log('😂😂😂😂😂asd😂', careGuide.section);
     state.recipe = {
       id: plant.id,
       commonName: plant.common_name,
@@ -35,13 +34,13 @@ export const loadRecipe = async function (id) {
       cycle: plant.cycle,
       watering: plant.watering,
       sunlight: plant.sunlight,
-      plant: plant.description,
+      description: plant.description ? plant.description : 'No Data Available.',
       origin: plant.origin,
       type: plant.type,
-      indoor: plant.indoor,
+      indoor: plant.indoor ? 'Yes' : 'No',
       careLevel: plant.care_level,
     };
-    state.careGuide = {
+    state.recipe.careGuide = {
       watering: careGuide.section[0].description,
       sunlight: careGuide.section[1].description,
       pruning: careGuide.section[2].description,
