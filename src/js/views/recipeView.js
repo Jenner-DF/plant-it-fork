@@ -39,25 +39,21 @@ class recipeView extends View {
         <div class="recipe__details">
           <div class="recipe__info">
           <svg class="recipe__info-icon">
-          <use href="${icons}.svg#icon-clock"></use>
+          <use href="${icons}.svg#icon-cycle"></use>
           </svg>
           <span class="recipe__info-text">${this._data.cycle}</span>
           </div>
           <div class="recipe__info">
           <svg class="recipe__info-icon">
-          <use href="${icons}.svg#icon-clock"></use>
+          <use href="${icons}.svg#icon-water"></use>
           </svg>
           <span class="recipe__info-text">${this._data.watering}</span>
           </div>
           <div class="recipe__info">
           <svg class="recipe__info-icon">
-          <use href="${icons}.svg#icon-clock"></use>
+          <use href="${icons}.svg#icon-sun"></use>
           </svg>
           <span class="recipe__info-text">${this._data.sunlight}</span>
-          </div>
-
-          <div class="recipe__user-generated">
-           
           </div>
           <button class="btn--round btn--bookmark">
             <svg class="">
