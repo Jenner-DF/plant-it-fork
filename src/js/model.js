@@ -1,12 +1,14 @@
 import {
   API_KEY,
-  API_URL,
   RESULTS_PER_PAGE,
   API_URL_PLANT_LIST,
+  API_URL_PLANT_DETAILS,
+  API_URL_PLANT_CARE_GUIDE,
 } from './config.js';
 import { getJSON, removePremiumPlants } from './helpers.js';
 export const state = {
   recipe: {},
+  careGuide: {},
   search: {
     query: '',
     results: [],
@@ -18,19 +20,33 @@ export const state = {
 
 export const loadRecipe = async function (id) {
   try {
-    const data = await getJSON(`${API_URL}/${id}`);
-    const { recipe } = data.data;
-    const data2 = removePremiumPlants(data.data);
+    const data = await getJSON(`${API_URL_PLANT_DETAILS}/${id}?key=${API_KEY}`);
+    const data_careGuide = await getJSON(
+      `${API_URL_PLANT_CARE_GUIDE}?species_id=${id}&key=${API_KEY}`
+    );
+    const plant = data;
+    const [careGuide] = data_careGuide.data;
+    console.log('😂😂😂😂😂😂', careGuide.section);
     state.recipe = {
-      id: recipe.id,
-      title: recipe.title,
-      publisher: recipe.publisher,
-      sourceUrl: recipe.source_url,
-      image: recipe.image_url,
-      servings: recipe.servings,
-      cookingTime: recipe.cooking_time,
-      ingredients: recipe.ingredients,
+      id: plant.id,
+      commonName: plant.common_name,
+      scientificName: plant.scientific_name[0],
+      image: plant.default_image.original_url,
+      cycle: plant.cycle,
+      watering: plant.watering,
+      sunlight: plant.sunlight,
+      plant: plant.description,
+      origin: plant.origin,
+      type: plant.type,
+      indoor: plant.indoor,
+      careLevel: plant.care_level,
     };
+    state.careGuide = {
+      watering: careGuide.section[0].description,
+      sunlight: careGuide.section[1].description,
+      pruning: careGuide.section[2].description,
+    };
+    console.log('😁😁😁😁😁', state.recipe);
     if (state.bookmarks.some(bmarked => bmarked.id === id))
       state.recipe.bookmarked = true;
     else state.recipe.bookmarked = false;
@@ -51,7 +67,7 @@ export const loadSearchResults = async function (userQuery) {
         id: plant.id,
         commonName: plant.common_name,
         scientificName: plant.scientific_name[0],
-        image: plant?.default_image?.original_url,
+        image: plant.default_image.original_url,
       };
     });
     console.log('😋😋😋😋', state.search.results);

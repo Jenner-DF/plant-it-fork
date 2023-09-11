@@ -32,28 +32,28 @@ class recipeView extends View {
       this._data.title
     }" class="recipe__img" />
           <h1 class="recipe__title">
-            <span>${this._data.title}</span>
+            <span>${this._data.commonName}</span>
           </h1>
         </figure>
 
         <div class="recipe__details">
           <div class="recipe__info">
-          <span class="recipe__info-text">Cycle</span>
-            <svg class="recipe__info-icon">
-              <use href="${icons}.svg#icon-clock"></use>
-            </svg>
+          <svg class="recipe__info-icon">
+          <use href="${icons}.svg#icon-clock"></use>
+          </svg>
+          <span class="recipe__info-text">${this._data.cycle}</span>
           </div>
           <div class="recipe__info">
-          <span class="recipe__info-text">Watering</span>
-            <svg class="recipe__info-icon">
-              <use href="${icons}.svg#icon-clock"></use>
-            </svg>
+          <svg class="recipe__info-icon">
+          <use href="${icons}.svg#icon-clock"></use>
+          </svg>
+          <span class="recipe__info-text">${this._data.watering}</span>
           </div>
           <div class="recipe__info">
-          <span class="recipe__info-text">Sunlight</span>
-            <svg class="recipe__info-icon">
-              <use href="${icons}.svg#icon-clock"></use>
-            </svg>
+          <svg class="recipe__info-icon">
+          <use href="${icons}.svg#icon-clock"></use>
+          </svg>
+          <span class="recipe__info-text">${this._data.sunlight}</span>
           </div>
 
           <div class="recipe__user-generated">
