@@ -8,7 +8,6 @@ import {
 import { getJSON, removePremiumPlants } from './helpers.js';
 export const state = {
   recipe: {},
-  careGuide: {},
   search: {
     query: '',
     results: [],
@@ -35,13 +34,12 @@ export const loadRecipe = async function (id) {
       cycle: plant.cycle,
       watering: plant.watering,
       sunlight: plant.sunlight,
-      plant: plant.description,
+      description: plant.description ? plant.description : 'No Data Available.',
       origin: plant.origin,
       type: plant.type,
-      indoor: plant.indoor,
+      indoor: plant.indoor ? 'Yes' : 'No',
       careLevel: plant.care_level,
     };
-    console.log('TANGINANGGITHUB YAN');
     state.recipe.careGuide = {
       watering: careGuide.section[0].description,
       sunlight: careGuide.section[1].description,
