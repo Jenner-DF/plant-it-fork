@@ -63,9 +63,6 @@ class recipeView extends View {
           <span class="recipe__info-text">${this._data.careLevel}</span>
           </div>
 
-          <div class="recipe__user-generated">
-           
-          </div>
           <button class="btn--round btn--bookmark">
             <svg class="">
               <use href="${icons}#icon-bookmark${
@@ -76,7 +73,7 @@ class recipeView extends View {
         </div>
         <div class="recipe__ingredients">
           <h2 class="heading--2">Plant Description:</h2>
-          <span>
+          <span style="text-align: justify">
             ${this._data.description}
           </span>
         </div>
@@ -85,11 +82,11 @@ class recipeView extends View {
             <use href="${icons}.svg#icon-care"></use>
           </svg>
           <h2 class="heading--2">Plant Care Guide</h2>
-          <span> Watering:
+          <span style="text-align: justify"> <b>Watering:</b>
           ${this._data.careGuide.watering} <br> <br>
-          Sunlight:  ${this._data.careGuide.sunlight} <br> <br>
-          Pruning: ${this._data.careGuide.pruning}
-          </span> 
+          <b>Sunlight:</b> ${this._data.careGuide.sunlight} <br> <br>
+          <b>Pruning:</b> ${this._data.careGuide.pruning}
+          </span>
         </div>
     `;
   }
