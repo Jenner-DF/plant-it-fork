@@ -92,3 +92,5 @@ const init = function () {
 };
 init();
 console.log('hello world');
+console.log('hello world');
+console.log('hello world');
