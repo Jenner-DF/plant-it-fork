@@ -26,7 +26,7 @@ export const loadRecipe = async function (id) {
     );
     const plant = data;
     const [careGuide] = data_careGuide.data;
-    console.log('😂😂😂😂😂😂', careGuide.section);
+    console.log('😂😂😂😂😂asd😂', careGuide.section);
     state.recipe = {
       id: plant.id,
       commonName: plant.common_name,
@@ -41,7 +41,8 @@ export const loadRecipe = async function (id) {
       indoor: plant.indoor,
       careLevel: plant.care_level,
     };
-    state.careGuide = {
+    console.log('TANGINANGGITHUB YAN');
+    state.recipe.careGuide = {
       watering: careGuide.section[0].description,
       sunlight: careGuide.section[1].description,
       pruning: careGuide.section[2].description,
