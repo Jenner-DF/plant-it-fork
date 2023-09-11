@@ -18,3 +18,12 @@ export const getJSON = async function (url) {
     throw error;
   }
 };
+
+export const removePremiumPlants = function (data) {
+  return data.filter(
+    data =>
+      data?.default_image?.original_url !== undefined &&
+      data?.default_image?.original_url !==
+        'https://perenual.com/storage/image/upgrade_access.jpg'
+  );
+};

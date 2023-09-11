@@ -1,5 +1,10 @@
-import { API_KEY, API_URL, RESULTS_PER_PAGE } from './config.js';
-import { getJSON } from './helpers.js';
+import {
+  API_KEY,
+  API_URL,
+  RESULTS_PER_PAGE,
+  API_URL_PLANT_LIST,
+} from './config.js';
+import { getJSON, removePremiumPlants } from './helpers.js';
 export const state = {
   recipe: {},
   search: {
@@ -15,6 +20,7 @@ export const loadRecipe = async function (id) {
   try {
     const data = await getJSON(`${API_URL}/${id}`);
     const { recipe } = data.data;
+    const data2 = removePremiumPlants(data.data);
     state.recipe = {
       id: recipe.id,
       title: recipe.title,
@@ -36,15 +42,19 @@ export const loadRecipe = async function (id) {
 export const loadSearchResults = async function (userQuery) {
   try {
     state.search.query = userQuery;
-    const data = await getJSON(`${API_URL}?search=${userQuery}&key=${API_KEY}`);
-    state.search.results = data.data.recipes.map(recipe => {
+    const data = await getJSON(
+      `${API_URL_PLANT_LIST}?key=${API_KEY}&q=${userQuery}`
+    );
+    const data2 = removePremiumPlants(data.data);
+    state.search.results = data2.map(plant => {
       return {
-        id: recipe.id,
-        title: recipe.title,
-        publisher: recipe.publisher,
-        image: recipe.image_url,
+        id: plant.id,
+        commonName: plant.common_name,
+        scientificName: plant.scientific_name[0],
+        image: plant?.default_image?.original_url,
       };
     });
+    console.log('😋😋😋😋', state.search.results);
     state.search.page = 1;
   } catch (error) {
     throw error;

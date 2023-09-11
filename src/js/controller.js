@@ -78,9 +78,6 @@ const controlAddBookmark = function () {
 };
 
 const controlBookmarks = function () {
-  // const storage = localStorage.getItem('bookmarks');
-  // console.log(JSON.parse(storage));
-  // if (storage) state.bookmarks = JSON.parse(storage);
   //render bookmarks
   bookmarksView.render(model.state.bookmarks);
 };
