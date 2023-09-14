@@ -89,6 +89,8 @@ const init = function () {
   recipeView.addHandlerAddBookmarks(controlAddBookmark);
   searchView.addHandlerSearch(controlSearchResults);
   paginationView.addHandlerClick(controlPagination);
+  recipeView.addHandlerCloseRecipe();
+  recipeView.openRecipe();
 };
 init();
 console.log('hello world');
