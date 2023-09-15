@@ -11,6 +11,10 @@
     gap: 1rem;
     padding-top: 1rem;
     max-height: $header-size-mobile;
+    .header__logo{
+      margin-left: 10px;
+    }
+   
   }
 
   &__logo {
