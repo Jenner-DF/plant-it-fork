@@ -1,0 +1,253 @@
+* {
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+body {
+    background-color: #9aad86;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #f9f5f3;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.center {
+    flex: 1;
+    text-align: center;
+}
+
+.left {
+    margin-right: auto;
+}
+
+#back-button {
+    max-height: 30px;
+}
+
+header img {
+    max-height: 50px;
+}
+
+h1 {
+    font-size: 24px;
+    color: #6b795e;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #f9f5f3;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.calendar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.day {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 18px;
+    width: calc(14.28% - 10px);
+    margin-bottom: 10px;
+    color: #25995c;
+    flex: 1;
+    box-sizing: border-box;
+}
+
+.date {
+    margin-top: 5px;
+    font-weight: normal;
+    font-size: 16px;
+    color: #7a896b;
+}
+
+.add-event {
+    background-color: #25995c;
+    color: #fff;
+    padding: 5px;
+    border: 1px solid #226122;
+    border-radius: 3px;
+    margin-top: 10px;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.add-event:hover {
+    background-color: #2e7d2e;
+    border-color: #2e7d2e;
+    color: #fff;
+}
+
+.calendar-header {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.calendar-header input[type="date"],
+.calendar-header input[type="text"],
+.calendar-header button {
+    margin: 5px;
+}
+
+.event-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #25995c;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 5px;
+    min-height: 50px;
+    word-wrap: break-word;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.event {
+    color: #fff;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.delete-event {
+    background-color: #2e7d2e;
+    color: #fff;
+    padding: 3px 8px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.delete-event:hover {
+    background-color: #1d601d;
+}
+
+.current-day {
+    background-color: #d9ecc6;
+}
+
+.full-calendar {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #f9f5f3;
+    padding: 20px;
+    border-radius: 10px !important;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.fc-toolbar .fc-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+}
+
+.fc-toolbar h2 {
+    margin: 0;
+    font-size: 22px;
+    color: #fff;
+}
+
+.fc-toolbar {
+    background-color: #758467;
+    color: #fff;
+    padding-top: 2px;
+}
+
+.fc-toolbar .fc-button {
+    background-color: #758467;
+    color: #fff;
+    background-image: none !important;
+}
+
+.fc-head {
+    background-color: #25995c;
+    color: #fff;
+}
+
+.fc-day {
+    background-color: #ffffff;
+}
+
+#fullCalendar .fc-day.fc-today {
+    background-color: #d9ecc6 !important;
+}
+
+.fc-title {
+    color: #fff;
+}
+
+.fc-event {
+    background-color: #25995c;
+    color: #fff;
+}
+
+.fc-event, .fc-event-dot {
+    border-color: #94a681;
+}
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 90%;
+        margin: 20px auto;
+        padding: 10px;
+    }
+
+    .day {
+        font-size: 14px;
+        width: calc(33.33% - 10px);
+        margin-bottom: 5px;
+    }
+
+    .date {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .day {
+        font-size: 12px;
+        width: calc(50% - 10px);
+    }
+
+    .date {
+        font-size: 10px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        max-width: 1024px;
+        margin: 20px auto;
+        padding: 20px;
+    }
+
+    .day {
+        font-size: 18px;
+        width: calc(14.28% - 10px);
+        margin-bottom: 10px;
+    }
+
+    .date {
+        font-size: 16px;
+    }
+}
