@@ -1,7 +1,7 @@
 import * as model from './model.js';
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
-import recipeView from './views/recipeView.js'; //can change name to any if export default
+import plantView from './views/recipeView.js'; //can change name to any if export default
 import searchView from './views/searchView.js';
 import resultsView from './views/resultsView.js';
 import paginationView from './views/paginationView.js';
@@ -17,7 +17,7 @@ async function controlRecipes() {
   try {
     const id = window.location.hash.slice(1);
     if (!id) return;
-    recipeView.renderSpinner();
+    plantView.renderSpinner();
     //update results view to mark selected search result
     resultsView.update(model.getSearchResultsPage());
     // 1) updating bookmarks view
@@ -25,9 +25,9 @@ async function controlRecipes() {
     // 2)loading recipe
     await model.loadRecipe(id); //will pause here until this is done
     // 3)rendering recipe
-    recipeView.render(model.state.recipe);
+    plantView.render(model.state.recipe);
   } catch (error) {
-    recipeView.renderError(error);
+    plantView.renderError(error);
   }
 }
 
@@ -61,7 +61,7 @@ const controlServings = function (updateServings) {
   model.updateServings(updateServings);
   //update recipe view
   // recipeView.render(model.state.recipe);
-  recipeView.update(model.state.recipe);
+  plantView.update(model.state.recipe);
 };
 
 const controlAddBookmark = function () {
@@ -72,7 +72,7 @@ const controlAddBookmark = function () {
 
   console.log(model.state.recipe);
   //update recipe view
-  recipeView.update(model.state.recipe);
+  plantView.update(model.state.recipe);
   //render bookmarks
   bookmarksView.render(model.state.bookmarks);
 };
@@ -84,13 +84,13 @@ const controlBookmarks = function () {
 
 const init = function () {
   bookmarksView.addHandlerRender(controlBookmarks);
-  recipeView.addHandlerRender(controlRecipes);
+  plantView.addHandlerRender(controlRecipes);
   // recipeView.addHandlerUpdateServings(controlServings);
-  recipeView.addHandlerAddBookmarks(controlAddBookmark);
+  plantView.addHandlerAddBookmarks(controlAddBookmark);
   searchView.addHandlerSearch(controlSearchResults);
   paginationView.addHandlerClick(controlPagination);
-  recipeView.addHandlerCloseRecipe();
-  recipeView.openRecipe();
+  plantView.addHandlerClosePlant();
+  plantView.openPlant();
 };
 init();
 console.log('hello world');

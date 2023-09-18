@@ -2,7 +2,7 @@ import icons from '../../img/icons.svg';
 import View from './View';
 import fracty from 'fracty';
 
-class recipeView extends View {
+class plantView extends View {
   _parentElement = document.querySelector('.recipe');
   _errorMsg = `Cannot find plant data 😢. Try another plant`;
   _Msg = ``;
@@ -26,7 +26,7 @@ class recipeView extends View {
     });
   }
   // Opening the recipe view on mobile devices
-  openRecipe = function () {
+  openPlant = function () {
     const element = document.querySelector('.recipe');
     window.addEventListener('hashchange', function () {
       element.classList.add('recipe-show');
@@ -34,7 +34,7 @@ class recipeView extends View {
   };
 
   // Closing the recipe view on mobile devices
-  addHandlerCloseRecipe() {
+  addHandlerClosePlant() {
     this._parentElement.addEventListener('click', function (e) {
       const btnRecipeClose = e.target.closest('.recipe__btn-close');
       if (!btnRecipeClose) return;
@@ -124,4 +124,4 @@ class recipeView extends View {
   //   }
 }
 
-export default new recipeView();
+export default new plantView();
