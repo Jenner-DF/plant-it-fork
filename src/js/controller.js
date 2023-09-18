@@ -23,9 +23,9 @@ async function controlRecipes() {
     // 1) updating bookmarks view
     bookmarksView.update(model.state.bookmarks);
     // 2)loading recipe
-    await model.loadRecipe(id); //will pause here until this is done
+    await model.loadPlant(id); //will pause here until this is done
     // 3)rendering recipe
-    plantView.render(model.state.recipe);
+    plantView.render(model.state.plant);
   } catch (error) {
     plantView.renderError(error);
   }
@@ -61,18 +61,18 @@ const controlServings = function (updateServings) {
   model.updateServings(updateServings);
   //update recipe view
   // recipeView.render(model.state.recipe);
-  plantView.update(model.state.recipe);
+  plantView.update(model.state.plant);
 };
 
 const controlAddBookmark = function () {
   //add/remove bookmark
-  if (!model.state.recipe.bookmarked) {
-    model.addBookmark(model.state.recipe);
-  } else model.deleteBookmark(model.state.recipe.id);
+  if (!model.state.plant.bookmarked) {
+    model.addBookmark(model.state.plant);
+  } else model.deleteBookmark(model.state.plant.id);
 
-  console.log(model.state.recipe);
+  console.log(model.state.plant);
   //update recipe view
-  plantView.update(model.state.recipe);
+  plantView.update(model.state.plant);
   //render bookmarks
   bookmarksView.render(model.state.bookmarks);
 };

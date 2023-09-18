@@ -7,7 +7,7 @@ import {
 } from './config.js';
 import { getJSON, removePremiumPlants } from './helpers.js';
 export const state = {
-  recipe: {},
+  plant: {},
   search: {
     query: '',
     results: [],
@@ -17,7 +17,7 @@ export const state = {
   bookmarks: [],
 };
 
-export const loadRecipe = async function (id) {
+export const loadPlant = async function (id) {
   try {
     const data = await getJSON(`${API_URL_PLANT_DETAILS}/${id}?key=${API_KEY}`);
     const data_careGuide = await getJSON(
@@ -26,7 +26,7 @@ export const loadRecipe = async function (id) {
     const plant = data;
     const [careGuide] = data_careGuide.data;
     console.log('😂😂😂😂😂asd😂', plant);
-    state.recipe = {
+    state.plant = {
       id: plant.id,
       commonName: plant.common_name,
       scientificName: plant.scientific_name[0],
@@ -40,15 +40,15 @@ export const loadRecipe = async function (id) {
       indoor: plant.indoor ? 'Yes' : 'No',
       careLevel: plant.care_level,
     };
-    state.recipe.careGuide = {
+    state.plant.careGuide = {
       watering: careGuide.section[0].description,
       sunlight: careGuide.section[1].description,
       pruning: careGuide.section[2].description,
     };
-    console.log('😁😁😁😁😁', state.recipe);
+    console.log('😁😁😁😁😁', state.plant);
     if (state.bookmarks.some(bmarked => bmarked.id === +id))
-      state.recipe.bookmarked = true;
-    else state.recipe.bookmarked = false;
+      state.plant.bookmarked = true;
+    else state.plant.bookmarked = false;
     console.log(state.bookmarks);
   } catch (error) {
     throw error;
@@ -84,11 +84,11 @@ export const getSearchResultsPage = function (page = state.search.page) {
 };
 
 export const updateServings = function (newServings) {
-  state.recipe.ingredients.forEach(ingredient => {
+  state.plant.ingredients.forEach(ingredient => {
     ingredient.quantity =
-      (ingredient.quantity * newServings) / state.recipe.servings;
+      (ingredient.quantity * newServings) / state.plant.servings;
   });
-  state.recipe.servings = newServings;
+  state.plant.servings = newServings;
 };
 
 const storeBookmarks = function () {
@@ -99,16 +99,16 @@ export const addBookmark = function (recipe) {
   //add bookmark
   state.bookmarks.push(recipe);
   //mark current recipe as bookmark
-  if (recipe.id === state.recipe.id) state.recipe.bookmarked = true;
+  if (recipe.id === state.plant.id) state.plant.bookmarked = true;
   storeBookmarks();
 };
 export const deleteBookmark = function (id) {
   console.log(id);
-  console.log(state.recipe);
+  console.log(state.plant);
 
   const index = state.bookmarks.findIndex(el => el.id === id);
   state.bookmarks.splice(index, 1);
-  if (id === state.recipe.id) state.recipe.bookmarked = false;
+  if (id === state.plant.id) state.plant.bookmarked = false;
   storeBookmarks();
 };
 
