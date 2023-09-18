@@ -1,3 +1,2 @@
-# food-search
-based on forkify
-forkify project based on 'https://forkify-v2.netlify.app/'
+# Plant-it
+Plant search, mobile responsive website
