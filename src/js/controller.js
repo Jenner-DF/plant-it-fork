@@ -1,7 +1,7 @@
 import * as model from './model.js';
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
-import plantView from './views/recipeView.js'; //can change name to any if export default
+import plantView from './views/plantView.js'; //can change name to any if export default
 import searchView from './views/searchView.js';
 import resultsView from './views/resultsView.js';
 import paginationView from './views/paginationView.js';
@@ -13,7 +13,7 @@ import bookmarksView from './views/bookmarksView.js';
 
 ///////////////////////////////////////
 
-async function controlRecipes() {
+async function controlPlants() {
   try {
     const id = window.location.hash.slice(1);
     if (!id) return;
@@ -56,13 +56,13 @@ const controlPagination = function (goToPage) {
   paginationView.render(model.state.search);
 };
 
-const controlServings = function (updateServings) {
-  //update the recipe servings (in state)
-  model.updateServings(updateServings);
-  //update recipe view
-  // recipeView.render(model.state.recipe);
-  plantView.update(model.state.plant);
-};
+// const controlServings = function (updateServings) {
+//   //update the recipe servings (in state)
+//   model.updateServings(updateServings);
+//   //update recipe view
+//   // recipeView.render(model.state.recipe);
+//   plantView.update(model.state.plant);
+// };
 
 const controlAddBookmark = function () {
   //add/remove bookmark
@@ -84,7 +84,7 @@ const controlBookmarks = function () {
 
 const init = function () {
   bookmarksView.addHandlerRender(controlBookmarks);
-  plantView.addHandlerRender(controlRecipes);
+  plantView.addHandlerRender(controlPlants);
   // recipeView.addHandlerUpdateServings(controlServings);
   plantView.addHandlerAddBookmarks(controlAddBookmark);
   searchView.addHandlerSearch(controlSearchResults);
@@ -93,6 +93,6 @@ const init = function () {
   plantView.openPlant();
 };
 init();
-console.log('hello world');
-console.log('hello world');
-console.log('hello world');
+// console.log('hello world');
+// console.log('hello world');
+// console.log('hello world');
