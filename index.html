@@ -12,6 +12,11 @@
 
     <link rel="stylesheet" href="src/sass/main.scss" />
     <script type="module" defer src="src/js/controller.js"></script>
+    <script
+      src="https://kit.fontawesome.com/b6c7eea833.js"
+      crossorigin="anonymous"
+      defer
+    ></script>
 
     <title>Plant-It</title>
   </head>
@@ -42,12 +47,6 @@
                 href="care.html"
                 id="care"
               >
-                <!-- <button class="nav__btn">
-                  <svg class="nav__icon">
-                    <use href="src/img/icons.svg#icon-edit"></use>
-                  </svg>
-                  <span>Care</span>
-                </button> -->
               </a>
             </li>
             <li class="nav__item">
@@ -67,20 +66,6 @@
                     </div>
                     <p>No bookmarks yet. Find a plant and bookmark it 😊</p>
                   </div>
-
-                  <!-- <li class="preview">
-                    <a class="preview__link" href="#23456">
-                      <figure class="preview__fig">
-                        <img src="src/img/test-1.jpg" alt="Test" />
-                      </figure>
-                      <div class="preview__data">
-                        <h4 class="preview__name">
-                          Pasta with Tomato Cream ...
-                        </h4>
-                        <p class="preview__publisher">The Pioneer Woman</p>
-                      </div>
-                    </a>
-                  </li> -->
                 </ul>
               </div>
             </li>
@@ -89,41 +74,9 @@
       </header>
 
       <div class="search-results">
-        <ul class="results">
-          <!-- 
-          <li class="preview">
-            <a class="preview__link preview__link--active" href="#23456">
-              <figure class="preview__fig">
-                <img src="src/img/test-1.jpg" alt="Test" />
-              </figure>
-              <div class="preview__data">
-                <h4 class="preview__title">Pasta with Tomato Cream ...</h4>
-                <p class="preview__publisher">The Pioneer Woman</p>
-                <div class="preview__user-generated">
-                  <svg>
-                    <use href="src/img/icons.svg#icon-user"></use>
-                  </svg>
-                </div>
-              </div>
-            </a>
-          </li>
-           -->
-        </ul>
+        <ul class="results"></ul>
 
-        <div class="pagination">
-          <!-- <button class="btn--inline pagination__btn--prev">
-            <svg class="search__icon">
-              <use href="src/img/icons.svg#icon-arrow-left"></use>
-            </svg>
-            <span>Page 1</span>
-          </button>
-          <button class="btn--inline pagination__btn--next">
-            <span>Page 3</span>
-            <svg class="search__icon">
-              <use href="src/img/icons.svg#icon-arrow-right"></use>
-            </svg>
-          </button> -->
-        </div>
+        <div class="pagination"></div>
       </div>
 
       <div class="plant">
@@ -135,282 +88,7 @@
           </div>
           <p>Start by searching for a plant. Have fun!</p>
         </div>
-        <!-- <figure class="plant__fig">
-          <img
-            src="./src/js/views/me.jpg"
-            alt="${
-      this._data.title
-    }"
-            class="plant__img"
-          />
-          <h1 class="plant__title">
-            <span>${this._data.title}</span>
-          </h1>
-        </figure>
-        <div class="plant__details">
-          <div class="plant__info">
-            <i
-              class="fa-solid fa-arrows-spin fa-2xl"
-              style="color: #809171"
-            ></i>
-            <span class="plant__info-text">Cycle</span>
-          </div>
-          <div class="plant__info">
-            <i class="fa-solid fa-droplet fa-2xl" style="color: #819171"></i>
-            <span class="plant__info-text">Watering</span>
-          </div>
-          <div class="plant__info">
-            <span class="plant__info-text">Sunlight</span>
-          </div>
-
-          <div class="plant__user-generated"></div>
-          <button class="btn--round btn--bookmark">
-            <svg class="" href="icons.svg#icon-bookmark-fill"></svg>
-          </button>
-        </div>
-        <div class="plant__ingredients">
-          <h2 class="heading--2">Plant Description:</h2>
-          <span>
-            "Glossy Abelia (Abelia Grandiflora 'Hopleys' Miss Lemon) is an
-            amazing plant species that has a lot to offer. It boasts glossy
-            green leaves, beautiful white flowers and an exceptionally long
-            blooming period. It can also withstand heat and humidity, making it
-            perfect for growing in many climates. Its easy care also makes it a
-            great choice for gardeners of all levels. The uniquely bright yellow
-            color of its variegated foliage adds both depth and dimension to the
-            garden and its fast growing habit means you will be enjoying it in
-            no time!"
-          </span>
-        </div>
-
-        <div class="plant__ingredients">
-          <h2 class="heading--2">Plant Care Guide</h2>
-          <span>
-            Watering: Watermelons need a lot of water, especially during the hot
-            summer months. To successfully grow watermelon, water the plant when
-            the top 1-2 inches of the soil is dry. Water deeply and slowly,
-            soaking the soil evenly so that the water reaches the roots. If
-            water runs off of the soil, wait 20 minutes and then water again.
-            Allow the soil to dry slightly between waterings. Water the plants 2
-            to 3 times a week with 2-3 gallons of water per plant. Avoid wetting
-            the foliage while watering. During a prolonged dry period, or if
-            temperatures exceed 90°F, increase watering to once per day. <br />
-            <br />
-            Sunlight: Watermelons require 8 to 10 hours of direct sunlight each
-            day for optimal growth and development. This species of plant grows
-            best in areas with full sun, which is defined as at least 6 hours of
-            direct sunlight, or 8 to 10 hours of sun with some light shade
-            during the hottest parts of the day. For best results, watermelons
-            should receive the majority of their sunlight during the morning
-            hours. Too much direct sunlight during the afternoon can cause the
-            plant's leaves to sunburn, resulting in lower yields. Watermelons
-            are also at risk of diseases, such as powdery mildew, when grown in
-            shady conditions. <br />
-            <br />
-            Pruning:Watermelon (Citrullus lanatus) should be pruned shortly
-            after planting. This should involve removing any weak or unhealthy
-            seedlings. After the plant is established, begin by pinching off any
-            lateral runners that are growing away from the main stem, leaving
-            only a few of the strongest ones. Throughout the growing season,
-            selectively prune off older leaves and stems to promote better air
-            circulation and to prevent disease. Pruning of watermelon plants
-            should be done in early to mid-summer as the plant matures. As the
-            vines begin to produce melons, pinch off the ends of the main
-            runners to establish a final trail. Make sure that the fruits are
-            left with enough foliage to protect them from sunburn. Finally, up
-            to 1 week before harvest, remove any remaining vine tips to focus
-            energy on ripening the existing melons.
-          </span>
-        </div> -->
-
-        <!-- <div class="spinner">
-          <svg>
-            <use href="src/img/icons.svg#icon-loader"></use>
-          </svg>
-        </div> -->
-
-        <!-- <div class="error">
-            <div>
-              <svg>
-                <use href="src/img/icons.svg#icon-alert-triangle"></use>
-              </svg>
-            </div>
-            <p>No plants found for your query. Please try again!</p>
-          </div> -->
-
-        <!--
-        <figure class="plant__fig">
-          <img src="src/img/test-1.jpg" alt="Tomato" class="plant__img" />
-          <h1 class="plant__title">
-            <span>Pasta with tomato cream sauce</span>
-          </h1>
-        </figure>
-
-        <div class="plant__details">
-          <div class="plant__info">
-            <svg class="plant__info-icon">
-              <use href="src/img/icons.svg#icon-clock"></use>
-            </svg>
-            <span class="plant__info-data plant__info-data--minutes">45</span>
-            <span class="plant__info-text">minutes</span>
-          </div>
-          <div class="plant__info">
-            <svg class="plant__info-icon">
-              <use href="src/img/icons.svg#icon-users"></use>
-            </svg>
-            <span class="plant__info-data plant__info-data--people">4</span>
-            <span class="plant__info-text">servings</span>
-
-            <div class="plant__info-buttons">
-              <button class="btn--tiny btn--increase-servings">
-                <svg>
-                  <use href="src/img/icons.svg#icon-minus-circle"></use>
-                </svg>
-              </button>
-              <button class="btn--tiny btn--increase-servings">
-                <svg>
-                  <use href="src/img/icons.svg#icon-plus-circle"></use>
-                </svg>
-              </button>
-            </div>
-          </div>
-
-          <div class="plant__user-generated">
-            <svg>
-              <use href="src/img/icons.svg#icon-user"></use>
-            </svg>
-          </div>
-          <button class="btn--round">
-            <svg class="">
-              <use href="src/img/icons.svg#icon-bookmark-fill"></use>
-            </svg>
-          </button>
-        </div>
-
-        <div class="plant__ingredients">
-          <h2 class="heading--2">Recipe ingredients</h2>
-          <ul class="plant__ingredient-list">
-            <li class="plant__ingredient">
-              <svg class="plant__icon">
-                <use href="src/img/icons.svg#icon-check"></use>
-              </svg>
-              <div class="plant__quantity">1000</div>
-              <div class="plant__description">
-                <span class="plant__unit">g</span>
-                pasta
-              </div>
-            </li>
-
-            <li class="plant__ingredient">
-              <svg class="plant__icon">
-                <use href="src/img/icons.svg#icon-check"></use>
-              </svg>
-              <div class="plant__quantity">0.5</div>
-              <div class="plant__description">
-                <span class="plant__unit">cup</span>
-                ricotta cheese
-              </div>
-            </li>
-          </ul>
-        </div>
-
-        <div class="plant__directions">
-          <h2 class="heading--2">How to cook it</h2>
-          <p class="plant__directions-text">
-            This plant was carefully designed and tested by
-            <span class="plant__publisher">The Pioneer Woman</span>. Please check out
-            directions at their website.
-          </p>
-          <a
-            class="btn--small plant__btn"
-            href="http://thepioneerwoman.com/cooking/pasta-with-tomato-cream-sauce/"
-            target="_blank"
-          >
-            <span>Directions</span>
-            <svg class="search__icon">
-              <use href="src/img/icons.svg#icon-arrow-right"></use>
-            </svg>
-          </a>
-        </div>
-        -->
       </div>
     </div>
-
-    <div class="overlay hidden"></div>
-    <div class="add-plant-window hidden">
-      <button class="btn--close-modal">&times;</button>
-      <form class="upload">
-        <div class="upload__column">
-          <h3 class="upload__heading">Recipe data</h3>
-          <label>Title</label>
-          <input value="TEST" required name="title" type="text" />
-          <label>URL</label>
-          <input value="TEST" required name="sourceUrl" type="text" />
-          <label>Image URL</label>
-          <input value="TEST" required name="image" type="text" />
-          <label>Publisher</label>
-          <input value="TEST" required name="publisher" type="text" />
-          <label>Prep time</label>
-          <input value="23" required name="cookingTime" type="number" />
-          <label>Servings</label>
-          <input value="23" required name="servings" type="number" />
-        </div>
-
-        <div class="upload__column">
-          <h3 class="upload__heading">Ingredients</h3>
-          <label>Ingredient 1</label>
-          <input
-            value="0.5,kg,Rice"
-            type="text"
-            required
-            name="ingredient-1"
-            placeholder="Format: 'Quantity,Unit,Description'"
-          />
-          <label>Ingredient 2</label>
-          <input
-            value="1,,Avocado"
-            type="text"
-            name="ingredient-2"
-            placeholder="Format: 'Quantity,Unit,Description'"
-          />
-          <label>Ingredient 3</label>
-          <input
-            value=",,salt"
-            type="text"
-            name="ingredient-3"
-            placeholder="Format: 'Quantity,Unit,Description'"
-          />
-          <label>Ingredient 4</label>
-          <input
-            type="text"
-            name="ingredient-4"
-            placeholder="Format: 'Quantity,Unit,Description'"
-          />
-          <label>Ingredient 5</label>
-          <input
-            type="text"
-            name="ingredient-5"
-            placeholder="Format: 'Quantity,Unit,Description'"
-          />
-          <label>Ingredient 6</label>
-          <input
-            type="text"
-            name="ingredient-6"
-            placeholder="Format: 'Quantity,Unit,Description'"
-          />
-        </div>
-
-        <button class="btn upload__btn">
-          <svg>
-            <use href="src/img/icons.svg#icon-upload-cloud"></use>
-          </svg>
-          <span>Upload</span>
-        </button>
-      </form>
-    </div>
-    <script
-      src="https://kit.fontawesome.com/b6c7eea833.js"
-      crossorigin="anonymous"
-    ></script>
   </body>
 </html>

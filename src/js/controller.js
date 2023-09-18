@@ -9,7 +9,6 @@ import bookmarksView from './views/bookmarksView.js';
 // if (module.hot) {
 //   module.hot.accept();
 // }
-// https://forkify-api.herokuapp.com/v2
 
 ///////////////////////////////////////
 
@@ -20,11 +19,11 @@ async function controlPlants() {
     plantView.renderSpinner();
     //update results view to mark selected search result
     resultsView.update(model.getSearchResultsPage());
-    // 1) updating bookmarks view
+    // 1 updating bookmarks view
     bookmarksView.update(model.state.bookmarks);
-    // 2)loading recipe
+    // 2 loading recipe
     await model.loadPlant(id); //will pause here until this is done
-    // 3)rendering recipe
+    // 3 rendering recipe
     plantView.render(model.state.plant);
   } catch (error) {
     plantView.renderError(error);
@@ -56,14 +55,6 @@ const controlPagination = function (goToPage) {
   paginationView.render(model.state.search);
 };
 
-// const controlServings = function (updateServings) {
-//   //update the recipe servings (in state)
-//   model.updateServings(updateServings);
-//   //update recipe view
-//   // recipeView.render(model.state.recipe);
-//   plantView.update(model.state.plant);
-// };
-
 const controlAddBookmark = function () {
   //add/remove bookmark
   if (!model.state.plant.bookmarked) {
@@ -85,7 +76,6 @@ const controlBookmarks = function () {
 const init = function () {
   bookmarksView.addHandlerRender(controlBookmarks);
   plantView.addHandlerRender(controlPlants);
-  // recipeView.addHandlerUpdateServings(controlServings);
   plantView.addHandlerAddBookmarks(controlAddBookmark);
   searchView.addHandlerSearch(controlSearchResults);
   paginationView.addHandlerClick(controlPagination);
@@ -93,6 +83,3 @@ const init = function () {
   plantView.openPlant();
 };
 init();
-// console.log('hello world');
-// console.log('hello world');
-// console.log('hello world');

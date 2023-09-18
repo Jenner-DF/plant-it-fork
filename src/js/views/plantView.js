@@ -10,14 +10,7 @@ class plantView extends View {
   addHandlerRender(handler) {
     ['hashchange', 'load'].forEach(ev => window.addEventListener(ev, handler));
   }
-  // addHandlerUpdateServings(handler) {
-  //   this._parentElement.addEventListener('click', function (e) {
-  //     const btn = e.target.closest('.btn--update-servings');
-  //     if (!btn) return;
-  //     const updateTo = +btn.dataset.updateTo; //convert to int
-  //     if (updateTo > 0) handler(updateTo);
-  //   });
-  // }
+
   addHandlerAddBookmarks(handler) {
     this._parentElement.addEventListener('click', function (e) {
       const btn = e.target.closest('.btn--bookmark');
@@ -107,21 +100,6 @@ class plantView extends View {
         </div>
     `;
   }
-
-  //   _generateMarkupIngredients(ingredient) {
-  //     return ` <li class="plant__ingredient">
-  //    <svg class="plant__icon">
-  //      <use href="${icons}.svg#icon-check"></use>
-  //    </svg>
-  //    <div class="plant__quantity">${
-  //      ingredient.quantity ? fracty(ingredient.quantity).toString() : 'as desired'
-  //    }</div>
-  //    <div class="plant__description">
-  //      <span class="plant__unit">${ingredient.unit}</span>
-  //      ${ingredient.description}
-  //    </div>
-  //  </li>`;
-  //   }
 }
 
 export default new plantView();

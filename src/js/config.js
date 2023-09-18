@@ -1,4 +1,3 @@
-export const API_URL = 'https://forkify-api.herokuapp.com/api/v2/recipes';
 export const API_URL_PLANT_LIST = 'https://perenual.com/api/species-list';
 export const API_URL_PLANT_DETAILS = 'https://perenual.com/api/species/details';
 export const API_URL_PLANT_CARE_GUIDE =

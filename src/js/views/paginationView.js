@@ -9,10 +9,6 @@ class PaginationView extends View {
     const numPages = Math.ceil(
       this._data.results.length / this._data.resultsPerPage
     );
-    console.log('this is my numpages');
-    console.log(numPages);
-    console.log(numPages > 1);
-    console.log(currentPage);
     //page 1 and other page
     //prettier-ignore
     if (currentPage === 1 && numPages > 1) {
