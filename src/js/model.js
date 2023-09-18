@@ -95,11 +95,11 @@ const storeBookmarks = function () {
   localStorage.setItem('bookmarks', JSON.stringify(state.bookmarks));
 };
 
-export const addBookmark = function (recipe) {
+export const addBookmark = function (plant) {
   //add bookmark
-  state.bookmarks.push(recipe);
+  state.bookmarks.push(plant);
   //mark current recipe as bookmark
-  if (recipe.id === state.plant.id) state.plant.bookmarked = true;
+  if (plant.id === state.plant.id) state.plant.bookmarked = true;
   storeBookmarks();
 };
 export const deleteBookmark = function (id) {
